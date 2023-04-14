@@ -19,7 +19,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: win10-laptop #ubuntu-latest
+    runs-on: ubuntu-latest # win10-laptop
 
     steps:
     - uses: actions/checkout@v3
