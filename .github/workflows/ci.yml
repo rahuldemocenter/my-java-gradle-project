@@ -31,7 +31,7 @@ jobs:
     - name: Docker Version
       run: docker --version
     - name: WPM commands
-      run: docker exec -i RAHS_Edge_Runtime_Ubuntu sh /opt/softwareag/wpm/bin/wpm.sh help
+      run: docker exec -i RAHS_Edge_Runtime_Ubuntu /opt/softwareag/wpm/bin/wpm.sh help
     - name: PWD
       run: pwd
     
