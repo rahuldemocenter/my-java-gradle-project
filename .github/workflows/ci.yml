@@ -1,11 +1,11 @@
 name: Microsoft Teams notification
 on:
   push:
-    branches:
-      - main
-      - develop
-      - master
-
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+permissions:
+  contents: read
 jobs:
   build:
     runs-on: ubuntu_local_laptop
