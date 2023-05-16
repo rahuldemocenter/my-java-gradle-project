@@ -16,8 +16,8 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Docker Version
-      run: docker --version
+    - name: Docker Containers
+      run: docker ps
 
     # notify Microsoft Teams channel with a custom message
     - uses: aliencube/microsoft-teams-actions@v0.8.0
