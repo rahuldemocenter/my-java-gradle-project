@@ -8,7 +8,7 @@ permissions:
   contents: read
 jobs:
   build:
-    runs-on: ubuntu_local_laptop
+    runs-on: ubuntu-windows-runner
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
