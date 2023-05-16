@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-windows-runner
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Docker Containers
+      run: docker ps
+    - name: Docker Container Stop
+      run: docker stop RAHS_POC01_ERT
+    - name: Docker Containers after STOP
+      run: docker ps
+    - name: Docker Container Start
+      run: docker start RAHS_POC01_ERT
+    - name: Docker Containers after START
+      run: docker ps
