@@ -29,7 +29,7 @@ jobs:
           accept: 200,201,204
 
           # Headers can be passed through with a json object string
-          headers: '{ "Accept": "application/json, text/plain, */*","Accept-Language": "en","Connection": "keep-alive","Content-Type": "application/json","Origin": "https://originawsdev1.dev-int-aws-us.webmethods.io","Referer": "https://originawsdev1.dev-int-aws-us.webmethods.io","Sec-Fetch-Dest": "empty","Sec-Fetch-Mode": "cors","Sec-Fetch-Site": "same-origin","authtoken": "fld666eec9e623a3dd403f65","x-csrf-token": "4bd57b58-3776-4194-acd3-f4212e737625" }'
+          headers: '{ "Accept": "application/json, text/plain, */*","Accept-Language": "en","Connection": "keep-alive","Content-Type": "application/json","Origin": "https://originawsdev1.dev-int-aws-us.webmethods.io","Referer": "https://originawsdev1.dev-int-aws-us.webmethods.io","Sec-Fetch-Dest": "empty","Sec-Fetch-Mode": "cors","Sec-Fetch-Site": "same-origin","authtoken": "fl3ff07fdf34477632ed077c","x-csrf-token": "12762e3b-f6cf-4dfa-84d4-a573d704afcc" }'
 
           # Params can be passed through with a json object string
          # params: '{ "param1": "value", "param2": "value2" }'
