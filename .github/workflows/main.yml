@@ -1,0 +1,74 @@
+name: Example of cURL action
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  test-curl-action:
+    name: "Perform REST API request"
+    runs-on: ubuntu-windows-runner
+    steps:
+      - name: "Call API"
+        uses: indiesdev/curl@v1.1
+        with:
+          # The target URL
+          # Required: true if custom-config is not set
+          url: https://originawsdev1.dev-int-aws-us.webmethods.io/integration/rest/origin/agent/generatecode/
+
+          # The request method, basically it's one of GET|POST|PUT|PATCH
+          # Default is GET
+          method: "POST"
+
+          # List of response status codes to be accepted, else it will set the job to be failed
+          # If more than one value is needed, you can use comma (,) as separator
+          # In this case if the response status code is not one of 200, 201 and 204, the job will be failed
+          # Default is 200,201,204
+          accept: 200,201,204
+
+          # Headers can be passed through with a json object string
+          headers: '{ "Accept": "application/json, text/plain, */*","Accept-Language": "en","Connection": "keep-alive","Content-Type": "application/json","Origin": "https://originawsdev1.dev-int-aws-us.webmethods.io","Referer": "https://originawsdev1.dev-int-aws-us.webmethods.io","Sec-Fetch-Dest": "empty","Sec-Fetch-Mode": "cors","Sec-Fetch-Site": "same-origin","authtoken": "fld666eec9e623a3dd403f65","x-csrf-token": "4bd57b58-3776-4194-acd3-f4212e737625" }'
+
+          # Params can be passed through with a json object string
+         # params: '{ "param1": "value", "param2": "value2" }'
+
+          # Body request
+          # Apply only to POST|PUT request
+          body: '{"name":"RAHS_POC_May001","description":""}'
+
+          # Request timeout (millisec)
+          # Default: 1000
+          timeout: 1000
+
+          # Basic authentication using username and password
+          # This will override the Authorization header, for example Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
+          # Format => username:password as base 64
+         # basic-auth-token: ${{ secrets.curl_auth_token }}
+
+          # The authentication using token
+          # This will override the Authorization header, for example Authorization: Bearer QWxhZGRpbjpPcGVuU2VzYW1l
+          #bearer-token: ${{ secrets.bearer_token }}
+
+          # If you want to use proxy with the request, you can use proxy-url
+          # Format => host:port
+         # proxy-url: https://proxy-url:3000
+
+          # If the proxy host requires authentication, you can use proxy-auth to pass credentials
+          # Format => username:password as base64
+        #  proxy-auth-token: ${{ secrets.proxy_auth_token }}
+
+          # If it is set to true, it will show the response log in the GitHub UI
+          # Default: false
+          log-response: false
+
+          # The number of attempts before giving up
+          # Default: 1
+          retries: 3
+
+          # If you want to use axios config directly, you can pass a config file to the action
+          # The file is just basically a json file that has the same format as axios config https://github.com/axios/axios#request-config
+          # If this input is set, it will ignore other inputs related to the config
+          # The path file is relative to the root directory of the repo
+         # custom-config: .github/workflows/curl-config.json
