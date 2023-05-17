@@ -61,7 +61,7 @@ jobs:
 
           # If it is set to true, it will show the response log in the GitHub UI
           # Default: false
-          log-response: false
+          log-response: true
 
           # The number of attempts before giving up
           # Default: 1
