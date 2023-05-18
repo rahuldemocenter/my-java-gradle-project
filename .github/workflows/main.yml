@@ -37,7 +37,7 @@ jobs:
 
           # Body request
           # Apply only to POST|PUT request
-          body: '{"name":"RAHS_POC_May0126","description":"RAHS_POC_May0123"}'
+          body: '{"name":"RAHS_POC_May0128","description":"RAHS_POC_May0123"}'
 
           # Request timeout (millisec)
           # Default: 1000
@@ -75,8 +75,10 @@ jobs:
          # custom-config: .github/workflows/curl-config.json
       - name: "Use response"
         run: echo ${{ steps.api.outputs.response }}
-      - name: "Use response data"
-        run: echo ${{ steps.api.outputs.response.data }}
+      - name: "Use response data "
+        run: '{"generate_code_response": "${{ steps.api.outputs.response.data }}"}' 
+      - name: "Use response data code "
+        run: echo ${{ generate_code_response.status_code }}
       - uses: actions/checkout@v3
       - name: Docker Containers
         #run: docker run -p 5588:5555 -d -e SAG_IS_CLOUD_REGISTER_URL=https://originawsdev1.dev-int-aws-us.webmethods.io -e SAG_IS_EDGE_TENANT_ID=originawsdev1 -e SAG_IS_EDGE_CLOUD_ALIAS=${{ steps.api.outputs.response.data.name }} -e SAG_IS_CLOUD_REGISTER_TOKEN=${{ steps.api.outputs.response.data.code }} --name=${{ steps.api.outputs.response.data.name }} iregistry.eur.ad.sag/origin/webmethods-edge-runtime:latest
