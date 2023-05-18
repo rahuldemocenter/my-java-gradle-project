@@ -74,7 +74,7 @@ jobs:
           # The path file is relative to the root directory of the repo
          # custom-config: .github/workflows/curl-config.json
       - name: "Use response"
-        run: echo '${{ fromJson(steps.api.outputs.response).data }}'
+        run: echo '${{ fromJson(steps.api.outputs.response).data['name'] }}'
       - uses: actions/checkout@v3
       - name: Docker Containers
         #run: docker run -p 5588:5555 -d -e SAG_IS_CLOUD_REGISTER_URL=https://originawsdev1.dev-int-aws-us.webmethods.io -e SAG_IS_EDGE_TENANT_ID=originawsdev1 -e SAG_IS_EDGE_CLOUD_ALIAS=${{ steps.api.outputs.response.data.name }} -e SAG_IS_CLOUD_REGISTER_TOKEN=${{ steps.api.outputs.response.data.code }} --name=${{ steps.api.outputs.response.data.name }} iregistry.eur.ad.sag/origin/webmethods-edge-runtime:latest
