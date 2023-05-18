@@ -76,7 +76,7 @@ jobs:
       - name: "Use response"
         run: echo ${{ steps.api.outputs.response }}
       - name: "Use response data"
-        run: echo ${{ response.data }}
+        run: echo ${{ steps.api.outputs.response.data }}
       - uses: actions/checkout@v3
       - name: Docker Containers
         #run: docker run -p 5588:5555 -d -e SAG_IS_CLOUD_REGISTER_URL=https://originawsdev1.dev-int-aws-us.webmethods.io -e SAG_IS_EDGE_TENANT_ID=originawsdev1 -e SAG_IS_EDGE_CLOUD_ALIAS=${{ steps.api.outputs.response.data.name }} -e SAG_IS_CLOUD_REGISTER_TOKEN=${{ steps.api.outputs.response.data.code }} --name=${{ steps.api.outputs.response.data.name }} iregistry.eur.ad.sag/origin/webmethods-edge-runtime:latest
