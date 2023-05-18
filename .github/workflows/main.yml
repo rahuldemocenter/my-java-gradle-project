@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: "Call API"
         uses: indiesdev/curl@v1.1
+        id: api
         with:
           # The target URL
           # Required: true if custom-config is not set
@@ -29,14 +30,14 @@ jobs:
           accept: 200,201,204
 
           # Headers can be passed through with a json object string
-          headers: '{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36","sec-ch-ua-platform":"\"Windows\"","environment":"","sec-ch-ua-mobile":"?0","Connection":"keep-alive", "Content-Type":"application/json", "Accept":"application/json, text/plain, */*", "Accept-Encoding":"gzip, deflate, br","Accept-Language":"en,fr;q=0.9,en-US;q=0.8,es;q=0.7,uk;q=0.6","Cookie":"lang=en; apt.uid=AP-BCBBKBNAYWW6-2-2-1679290908335-14677246.0.2.1f906cf3-12ca-40aa-9b8c-cc50c52f96a7; route=1684220764.991.44.546718|58fb03e5a1678771a75dea209604055b; login=; SameSite=Lax; OAuth_Token_Request_State=5c51ec53-8a18-4fcc-a8e2-0bb0626f1e5b; JSESSIONID=019E01F8FFB8066C532229BAE27EA6A2; apt.sid=AP-BCBBKBNAYWW6-2-2-1684325277128-77465441","Origin":"https://originawsdev1.dev-int-aws-us.webmethods.io","Referer":"https://originawsdev1.dev-int-aws-us.webmethods.io/","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-origin","authtoken":"fl3ff07fdf34477632ed077c","environment":"","x-csrf-token":"12762e3b-f6cf-4dfa-84d4-a573d704afcc"}'
+          headers: '{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36","sec-ch-ua-platform":"\"Windows\"","environment":"","sec-ch-ua-mobile":"?0","Connection":"keep-alive", "Content-Type":"application/json", "Accept":"application/json, text/plain, */*", "Accept-Encoding":"gzip, deflate, br","Accept-Language":"en,fr;q=0.9,en-US;q=0.8,es;q=0.7,uk;q=0.6","Cookie":"lang=en; apt.uid=AP-BCBBKBNAYWW6-2-2-1679290908335-14677246.0.2.1f906cf3-12ca-40aa-9b8c-cc50c52f96a7; route=1684220764.991.44.546718|58fb03e5a1678771a75dea209604055b; login=; SameSite=Lax; OAuth_Token_Request_State=5c51ec53-8a18-4fcc-a8e2-0bb0626f1e5b; JSESSIONID=019E01F8FFB8066C532229BAE27EA6A2; apt.sid=AP-BCBBKBNAYWW6-2-2-1684325277128-77465441","Origin":"https://originawsdev1.dev-int-aws-us.webmethods.io","Referer":"https://originawsdev1.dev-int-aws-us.webmethods.io/","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-origin","authtoken":"fld07b52ccab5d98c893e39e","environment":"","x-csrf-token":"01b4b0c0-5e35-4aa6-9f5a-ee687ff1612b"}'
 
           # Params can be passed through with a json object string
          # params: '{ "param1": "value", "param2": "value2" }'
 
           # Body request
           # Apply only to POST|PUT request
-          body: '{"name":"RAHS_POC_May007","description":""}'
+          body: '{"name":"RAHS_POC_May009","description":""}'
 
           # Request timeout (millisec)
           # Default: 1000
@@ -62,7 +63,7 @@ jobs:
           # If it is set to true, it will show the response log in the GitHub UI
           # Default: false
           log-response: true
-
+  
           # The number of attempts before giving up
           # Default: 1
           retries: 3
@@ -72,3 +73,5 @@ jobs:
           # If this input is set, it will ignore other inputs related to the config
           # The path file is relative to the root directory of the repo
          # custom-config: .github/workflows/curl-config.json
+      - name: "Use response"
+        run: echo ${{ steps.api.outputs.response }}
