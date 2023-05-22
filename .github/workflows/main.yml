@@ -37,7 +37,7 @@ jobs:
 
           # Body request
           # Apply only to POST|PUT request
-          body: '{"name":"RAHS_MayPOC04","description":"RAHS_POC_May0123"}'
+          body: '{"name":"RAHS_MayPOC06","description":""}'
 
           # Request timeout (millisec)
           # Default: 1000
