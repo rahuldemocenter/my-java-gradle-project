@@ -30,14 +30,14 @@ jobs:
           accept: 200,201,204
 
           # Headers can be passed through with a json object string
-          headers: '{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36","sec-ch-ua-platform":"\"Windows\"","environment":"","sec-ch-ua-mobile":"?0","Connection":"keep-alive", "Content-Type":"application/json", "Accept":"application/json, text/plain, */*", "Accept-Encoding":"gzip, deflate, br","Accept-Language":"en,fr;q=0.9,en-US;q=0.8,es;q=0.7,uk;q=0.6","Cookie":"lang=en; route=1686655272.393.181.137734|58fb03e5a1678771a75dea209604055b; OAuth_Token_Request_State=e4250f56-9502-468f-ad05-8c1a5827b4a3; JSESSIONID=39A1E5C287F5D6343D0F4E7EA1F4B369; login=; SameSite=Lax; apt.sid=AP-BCBBKBNAYWW6-2-1686655457808-28367932; apt.uid=AP-BCBBKBNAYWW6-2-1686655457809-25454115.0.2.a2789759-5725-4a00-8e42-b779728a984e","Origin":"https://wmintanywhere.int-aw-au.webmethods.io","Referer":"https://wmintanywhere.int-aw-au.webmethods.io/","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-origin","authtoken":"fl77985e08cc1604cd267656","x-csrf-token":"506056e7-9125-4334-8dc7-fd7d389842a5"}'
+          headers: '{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36","sec-ch-ua-platform":"\"Windows\"","environment":"","sec-ch-ua-mobile":"?0","Connection":"keep-alive", "Content-Type":"application/json", "Accept":"application/json, text/plain, */*", "Accept-Encoding":"gzip, deflate, br","Accept-Language":"en,fr;q=0.9,en-US;q=0.8,es;q=0.7,uk;q=0.6","Cookie":"${{ secrets.MICROSOFT_TEAMS_WEBHOOK_URI }}","Origin":"https://wmintanywhere.int-aw-au.webmethods.io","Referer":"https://wmintanywhere.int-aw-au.webmethods.io/","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-origin","authtoken":"fl77985e08cc1604cd267656","x-csrf-token":"506056e7-9125-4334-8dc7-fd7d389842a5"}'
           
           # Params can be passed through with a json object string
          # params: '{ "param1": "value", "param2": "value2" }'
 
           # Body request
           # Apply only to POST|PUT request
-          body: '{"name":"RAHS_ERT_CICD_POC003","description":""}'
+          body: '{"name":"RAHS_ERT_CICD_POC004","description":""}'
 
           # Request timeout (millisec)
           # Default: 1000
