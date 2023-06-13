@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-windows-runner
     steps:
     # notify on each build event like starting and finishing a build
-    - uses: toko-bifrost/ms-teams-deploy-card@master
-      if: always()
-      with:
-        github-token: ${{ github.token }}
-        webhook-uri: ${{ secrets.MICROSOFT_TEAMS_WEBHOOK_URI }}
+    #- uses: toko-bifrost/ms-teams-deploy-card@master
+     # if: always()
+     # with:
+     #   github-token: ${{ github.token }}
+      #  webhook-uri: ${{ secrets.MICROSOFT_TEAMS_WEBHOOK_URI }}
     # notify Microsoft Teams channel with a custom message
     - uses: aliencube/microsoft-teams-actions@v0.8.0
       with:
