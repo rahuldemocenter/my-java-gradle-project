@@ -17,7 +17,7 @@ jobs:
         with:
           # The target URL
           # Required: true if custom-config is not set
-          url: https://originawsdev1.dev-int-aws-us.webmethods.io/integration/rest/origin/agent/generatecode/
+          url: https://wmintanywhere.int-aw-au.webmethods.io/integration/rest/origin/agent/generatecode/
 
           # The request method, basically it's one of GET|POST|PUT|PATCH
           # Default is GET
@@ -30,14 +30,14 @@ jobs:
           accept: 200,201,204
 
           # Headers can be passed through with a json object string
-          headers: '{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36","sec-ch-ua-platform":"\"Windows\"","environment":"","sec-ch-ua-mobile":"?0","Connection":"keep-alive", "Content-Type":"application/json", "Accept":"application/json, text/plain, */*", "Accept-Encoding":"gzip, deflate, br","Accept-Language":"en,fr;q=0.9,en-US;q=0.8,es;q=0.7,uk;q=0.6","Cookie":"lang=en; route=1684220764.991.44.546718|58fb03e5a1678771a75dea209604055b; login=; SameSite=Lax; apt.uid=AP-BCBBKBNAYWW6-2-2-1684390015920-91972581.0.2.1f906cf3-12ca-40aa-9b8c-cc50c52f96a7; apt.sid=AP-BCBBKBNAYWW6-2-2-1684730088065-68966786; OAuth_Token_Request_State=b03a473e-d807-43bc-92c8-2816ed18dedc; JSESSIONID=663A279633E41AF6220AE38CF1487A2F","Origin":"https://originawsdev1.dev-int-aws-us.webmethods.io","Referer":"https://originawsdev1.dev-int-aws-us.webmethods.io/","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-origin","authtoken":"flb130513be080da1b37c56f","x-csrf-token":"de9bbfb6-0ea7-41be-a68d-f1401d059508"}'
+         headers: '{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36","sec-ch-ua-platform":"\"Windows\"","environment":"","sec-ch-ua-mobile":"?0","Connection":"keep-alive", "Content-Type":"application/json", "Accept":"application/json, text/plain, */*", "Accept-Encoding":"gzip, deflate, br","Accept-Language":"en,fr;q=0.9,en-US;q=0.8,es;q=0.7,uk;q=0.6","Cookie":"lang=en; route=1686655272.393.181.137734|58fb03e5a1678771a75dea209604055b; OAuth_Token_Request_State=e4250f56-9502-468f-ad05-8c1a5827b4a3; JSESSIONID=39A1E5C287F5D6343D0F4E7EA1F4B369; login=; SameSite=Lax; apt.sid=AP-BCBBKBNAYWW6-2-1686655457808-28367932; apt.uid=AP-BCBBKBNAYWW6-2-1686655457809-25454115.0.2.a2789759-5725-4a00-8e42-b779728a984e","Origin":"https://wmintanywhere.int-aw-au.webmethods.io","Referer":"https://wmintanywhere.int-aw-au.webmethods.io/","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-origin","authtoken":"fl77985e08cc1604cd267656","x-csrf-token":"506056e7-9125-4334-8dc7-fd7d389842a5"}'
           
           # Params can be passed through with a json object string
          # params: '{ "param1": "value", "param2": "value2" }'
 
           # Body request
           # Apply only to POST|PUT request
-          body: '{"name":"RAHS_MayPOC06","description":""}'
+          body: '{"name":"RAHS_ERT_CICD_POC002","description":""}'
 
           # Request timeout (millisec)
           # Default: 1000
