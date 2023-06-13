@@ -30,14 +30,14 @@ jobs:
           accept: 200,201,204
 
           # Headers can be passed through with a json object string
-          headers: '{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36","sec-ch-ua-platform":"\"Windows\"","environment":"","sec-ch-ua-mobile":"?0","Connection":"keep-alive", "Content-Type":"application/json", "Accept":"application/json, text/plain, */*", "Accept-Encoding":"gzip, deflate, br","Accept-Language":"en,fr;q=0.9,en-US;q=0.8,es;q=0.7,uk;q=0.6","Cookie":"${{ vars.HEADER_COOKIE_ERT }}","Origin":"https://wmintanywhere.int-aw-au.webmethods.io","Referer":"https://wmintanywhere.int-aw-au.webmethods.io/","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-origin","authtoken":"fl77985e08cc1604cd267656","x-csrf-token":"506056e7-9125-4334-8dc7-fd7d389842a5"}'
+          headers: '{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36","sec-ch-ua-platform":"\"Windows\"","environment":"","sec-ch-ua-mobile":"?0","Connection":"keep-alive", "Content-Type":"application/json", "Accept":"application/json, text/plain, */*", "Accept-Encoding":"gzip, deflate, br","Accept-Language":"en,fr;q=0.9,en-US;q=0.8,es;q=0.7,uk;q=0.6","Cookie":"${{ vars.HEADER_COOKIE_ERT }}","Origin":"${{ vars.HEADER_ORIGIN }}","Referer":"{{ vars.HEADER_REFERER }}","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-origin","authtoken":"{{ vars.HEADER_AUTH_TOKEN }}","x-csrf-token":"${{ vars.HEADER_X_CSRF_TOKEN }}"}'
           
           # Params can be passed through with a json object string
          # params: '{ "param1": "value", "param2": "value2" }'
 
           # Body request
           # Apply only to POST|PUT request
-          body: '{"name":"RAHS_ERT_CICD_POC005","description":""}'
+          body: '{"name":"RAHS_ERT_CICD_POC006","description":""}'
 
           # Request timeout (millisec)
           # Default: 1000
