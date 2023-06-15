@@ -18,11 +18,11 @@ jobs:
     - name: Docker Containers
       run: docker ps
     - name: Docker Container Stop
-      run: docker stop RAHS_Git_POC_ERT_June0011001
+      run: docker stop ${{ inputs.EdgeRuntime }}
     - name: Docker Containers after STOP
       run: docker ps
     - name: Docker Container Start
-      run: docker start RAHS_Git_POC_ERT_June0011001
+      run: docker start ${{ inputs.EdgeRuntime }}
     - name: Docker Containers after START
       run: docker ps
       # notify Microsoft Teams channel with a custom message
