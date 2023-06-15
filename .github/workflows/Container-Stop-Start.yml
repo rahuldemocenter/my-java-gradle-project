@@ -1,10 +1,7 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
 
@@ -17,11 +14,11 @@ jobs:
     - name: Docker Containers
       run: docker ps
     - name: Docker Container Stop
-      run: docker stop RAHS_POC01_ERT
+      run: docker stop RAHS_Git_POC_ERT_June0011001
     - name: Docker Containers after STOP
       run: docker ps
     - name: Docker Container Start
-      run: docker start RAHS_POC01_ERT
+      run: docker start RAHS_Git_POC_ERT_June0011001
     - name: Docker Containers after START
       run: docker ps
       # notify Microsoft Teams channel with a custom message
