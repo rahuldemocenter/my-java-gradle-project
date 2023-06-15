@@ -2,7 +2,11 @@ name: Docker Image CI
 
 on:
   workflow_dispatch:
-
+    inputs:
+      EdgeRuntime:
+        description: 'Name of the Edge Runtime'
+        required: true
+        type: string
 jobs:
 
   build:
