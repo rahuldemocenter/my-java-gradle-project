@@ -23,8 +23,14 @@ jobs:
         file: ./app/src/main/resources/edgeruntime.properties
         all: true
 
-    - run: echo ${{ steps.all.outputs.EDGE-RUNTIME_LIST }} # Project's version from gradle.properties
-
+    - run: echo ${{ steps.all.outputs.EDGE-RUNTIME_LIST }} # ERT names from a property file
+    - name: Mendax Loop through numbers
+      id: loop
+      run: |
+          for i in 1 2 3 4 5
+          do
+            echo "Mendax Current number: $i"
+          done
     - uses: actions/checkout@v3
     - name: Docker Containers
       run: docker ps
