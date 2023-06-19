@@ -19,12 +19,4 @@ jobs:
       with:
         webhook_uri: ${{ secrets.MICROSOFT_TEAMS_WEBHOOK_URI }}
         title: This is from GitHub Actions workflow "A custom message"
-        summary: This is a message summary
-- name: Trigger next workflow
-  if: success()
-  uses: peter-evans/repository-dispatch@v1
-  with:
-    token: ${{ secrets.REPO_GHA_PAT }}
-    repository: ${{ github.repository }}
-    event-type: trigger-Docker-Image-CI-Sequential
-    client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+        summary: This is a message summary 
