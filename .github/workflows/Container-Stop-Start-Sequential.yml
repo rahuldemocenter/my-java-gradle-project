@@ -1,8 +1,15 @@
-name: Docker Image CI Sequential
+name: Docker-Image-CI-Sequential
 
 on:
-  repository_dispatch:
-    types: [trigger-Docker-Image-CI-Sequential]
+  workflow_dispatch:
+
+  workflow_run:
+
+    workflows: ["Microsoft-Teams-notification-Sequential"]
+
+    types:
+
+      - completed
 jobs:
 
   build:
