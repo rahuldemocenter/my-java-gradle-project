@@ -1,4 +1,4 @@
-name: Docker-Image-CI-Sequential
+name: Container-Stop-Start-Sequential
 
 on:
   workflow_dispatch:
