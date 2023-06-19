@@ -1,4 +1,4 @@
-name: Microsoft Teams notification Sequential
+name: Microsoft-Teams-notification-Sequential
 on:
   push:
     branches: [ "master" ]
