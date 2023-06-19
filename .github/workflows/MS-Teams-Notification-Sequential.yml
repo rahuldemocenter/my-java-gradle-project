@@ -5,7 +5,7 @@ on:
 permissions:
   contents: read
 jobs:
-  build:
+  MS-TEAMS-NOTIFICATION:
     runs-on: ubuntu-windows-runner
     steps:
     # notify on each build event like starting and finishing a build
