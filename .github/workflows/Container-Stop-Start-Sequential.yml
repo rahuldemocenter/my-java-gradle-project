@@ -17,6 +17,14 @@ jobs:
     runs-on: ubuntu-windows-runner
 
     steps:
+    - uses: madhead/read-java-properties@latest
+      id: all
+      with:
+        file: ./app/src/main/resources/edgeruntime.properties
+        all: true
+
+    - run: echo ${{ steps.all.outputs.EDGE-RUNTIME_LIST }} # Project's version from gradle.properties
+
     - uses: actions/checkout@v3
     - name: Docker Containers
       run: docker ps
