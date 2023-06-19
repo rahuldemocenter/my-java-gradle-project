@@ -12,7 +12,7 @@ on:
       - completed
 jobs:
 
-  build:
+  ERT_STOP_START:
 
     runs-on: ubuntu-windows-runner
 
