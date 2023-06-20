@@ -22,23 +22,10 @@ jobs:
       run: |
           for etrStr in ${{ steps.all.outputs.EDGE_RUNTIME_LIST }}
           do
-          - uses: actions/checkout@v3
-            - name: Docker Containers
-              run: docker ps
-            - name: Docker Container Stop
-              run: docker stop $etrStr
-            - name: Docker Containers after STOP
-              run: docker ps
-            - name: Docker Container Start
-            run: docker start $etrStr
-          - name: Docker Containers after START
-            run: docker ps
-            # notify Microsoft Teams channel with a custom message
-          - uses: aliencube/microsoft-teams-actions@v0.8.0
-            with:
-              webhook_uri: ${{ secrets.MICROSOFT_TEAMS_WEBHOOK_URI }}
-              title: This is from GitHub Actions - Edge Runtime - $etrStr - stopped and started.
-              summary: This is a message summary
-            
+          echo "Mendax Current number: $etrStr"
+          docker stop $etrStr
+          docker ps
+          docker start $etrStr
+          docker ps
           done
     
