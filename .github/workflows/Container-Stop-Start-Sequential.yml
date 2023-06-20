@@ -21,7 +21,7 @@ jobs:
         all: true
     - run: echo ${{ steps.all.outputs.EDGE_RUNTIME_LIST }} # ERT names from a property file
   
-    - name: Mendax Loop through numbers
+    - name: Loop Through Edge Runtime List read from .properties file
       id: loop
       run: |
           for etrStr in ${{ steps.all.outputs.EDGE_RUNTIME_LIST }}
