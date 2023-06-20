@@ -1,7 +1,13 @@
-name: Container-Stop-Start-Sequential
-
 on:
   workflow_dispatch:
+
+  workflow_run:
+
+    workflows: ["Microsoft-Teams-notification-Sequential"]
+
+    types:
+
+      - completed
 jobs:
 
   ERT_STOP_START:
