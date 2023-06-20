@@ -1,3 +1,4 @@
+name: Container-Stop-Start-Sequential
 on:
   workflow_dispatch:
 
