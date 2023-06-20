@@ -21,6 +21,7 @@ jobs:
       run: |
           for etrStr in ${{ steps.all.outputs.EDGE_RUNTIME_LIST }}
           do
+          echo "Mendax Current number: $etrStr"
             - uses: actions/checkout@v3
             - name: Docker Containers
               run: docker ps
