@@ -1,0 +1,37 @@
+name: Container-Stop-Start-Notification
+on:
+  workflow_dispatch:
+
+  workflow_run:
+
+    workflows: ["Container-Stop-Start-Sequential"]
+
+    types:
+
+      - completed
+jobs:
+  MS-TEAMS-NOTIFICATION:
+    runs-on: ubuntu-windows-runner
+    steps:
+    - uses: actions/checkout@v3
+    - uses: madhead/read-java-properties@latest
+      id: all
+      with:
+        file: ./app/src/main/resources/edgeruntime.properties
+        all: true
+    - run: echo ${{ steps.all.outputs.EDGE_RUNTIME_LIST }} # ERT names from a property file
+  
+    - name: Mendax Loop through numbers
+      id: loop
+      run: |
+          for etrStr in ${{ steps.all.outputs.EDGE_RUNTIME_LIST }}
+          do
+          #echo "Mendax Current number: $etrStr"
+           # notify Microsoft Teams channel with a custom message
+          - uses: aliencube/microsoft-teams-actions@v0.8.0
+           with:
+            webhook_uri: ${{ secrets.MICROSOFT_TEAMS_WEBHOOK_URI }}
+            title: This is from GitHub Actions workflow "Edge Runtime Refreshed."
+            summary: This is a message summary
+          done
+    
