@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-windows-runner
 
     steps:
+    - uses: actions/checkout@v3
     - uses: madhead/read-java-properties@latest
       id: all
       with:
