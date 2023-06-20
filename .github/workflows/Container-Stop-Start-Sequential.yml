@@ -18,9 +18,13 @@ jobs:
     - run: echo ${{ steps.all.outputs.EDGE_RUNTIME_LIST }} # ERT names from a property file
   
     - name: Mendax Loop through numbers
-    strategy:
-      matrix:
-        ERT_LIST: ${{ steps.all.outputs.EDGE_RUNTIME_LIST }
-          echo "Mendax Current number:${{ matrix.ERT_LIST }}"
-    
-    
+      id: loop
+      run: |
+          for etrStr in ${{ steps.all.outputs.EDGE_RUNTIME_LIST }}
+          do
+          #echo "Mendax Current number: $etrStr"
+          docker stop $etrStr
+          docker ps
+          docker start $etrStr
+          docker ps
+          done
