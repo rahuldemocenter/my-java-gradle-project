@@ -19,7 +19,7 @@ jobs:
     - name: Mendax Loop through numbers
       id: loop
       run: |
-          for etrStr in ${{ fromJson(steps.all.outputs.EDGE_RUNTIME_LIST) }}
+          for etrStr in ${{ steps.all.outputs.EDGE_RUNTIME_LIST }}
           do
             echo "Mendax Current number: $etrStr"
           done
